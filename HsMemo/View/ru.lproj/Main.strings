@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Title task "; ObjectID = "7Bu-W6-Xhn"; */
+"7Bu-W6-Xhn.text" = "Title task ";
+
+/* Class = "UIViewController"; title = "AddTask"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "AddTask";
+
+/* Class = "UIButton"; normalTitle = "Add Task"; ObjectID = "Xfj-Ko-B60"; */
+"Xfj-Ko-B60.normalTitle" = "Add Task";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "mzF-QS-rdy"; */
+"mzF-QS-rdy.text" = "Title";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "swa-J4-ViG"; */
+"swa-J4-ViG.text" = "Subtitle";
+
+/* Class = "UINavigationItem"; title = "HsMemo"; ObjectID = "vnX-LX-ZLj"; */
+"vnX-LX-ZLj.title" = "HsMemo";
