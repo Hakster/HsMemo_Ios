@@ -5,8 +5,8 @@
 //  Created by Максим Козлов on 20/10/2018.
 //  Copyright © 2018 Максим Козлов. All rights reserved.
 //
-
 import UIKit
+import UserNotifications
 
 class AddTaskController: UIViewController {
     
@@ -16,9 +16,7 @@ class AddTaskController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
- 
     }
     
     // Метод прячет клавиатуру при нажатии вне поля Field
@@ -30,14 +28,23 @@ class AddTaskController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // Обработка действий при нажатии кнопки SaveTask
-    @IBAction func SaveTask(_ sender: UIButton) {
+    @IBAction func saveTask(_ sender: UIBarButtonItem) {
         // Вызов функции добавление Task и последующее занесени в таблицу и сохранение
         addTask(title: TitleTaskField.text!, deadDate: DeadlineTaskDate.date)
+        // добавление уведомления в центр
+        // Но в начале на всякий случай удалим старое если есть (Так скажем обновим)
+        removeNotifications(withIdentifiers: [TitleTaskField.text!])
+        scheduleNotification(indetifiers: TitleTaskField.text!, title: TitleTaskField.text!, deadDate: DeadlineTaskDate.date) { (success) in
+            if (success){
+                print("GOOOD")
+            }
+        }
         // Выход из View TaskList к списку Tasks
         let _ = self.navigationController?.popToRootViewController(animated: true) // return to list view
     }
-
-
+    
+//    deinit {
+//        removeNotifications(withIdentifiers: [TitleTaskField.text!])
+//    }
+    
 }
